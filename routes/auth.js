@@ -29,6 +29,9 @@ router.get("/login-failed", (req, res) => {
     })
 })
 
+// CLIENT_URL = https://google-auth-frontend-fu47.vercel.app
+
+
 console.log("done", process.env.CLIENT_URL)
 
 router.get("/auth/google", passport.authenticate("google", { scope: ["profile"] }))
