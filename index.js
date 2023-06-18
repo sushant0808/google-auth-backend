@@ -9,6 +9,13 @@ const cors = require("cors");
 const cookieParser = require('cookie-parser');
 const app = express();
 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", process.env.CLIENT_URL); // Replace with your frontend URL
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    next();
+});
+
 https://google-auth-backend-sg7z.onrender.com
 app.use(cors({
     origin: process.env.CLIENT_URL,
