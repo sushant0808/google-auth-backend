@@ -3,7 +3,7 @@ const passport = require("passport");
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-    res.send("HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa")
+    res.send("HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaa")
 })
 
 router.get("/login-success", (req, res) => {
