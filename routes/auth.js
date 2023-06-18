@@ -27,7 +27,7 @@ router.get("/login-failed", (req, res) => {
     })
 })
 
-console.log("done", process.env.CLIENT_URL)
+console.log("done it is", process.env.CLIENT_URL)
 
 router.get("/auth/google", passport.authenticate("google", { scope: ["profile"] }))
 router.get("/auth/google/callback", passport.authenticate("google", {
