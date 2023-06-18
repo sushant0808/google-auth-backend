@@ -5,16 +5,20 @@ const express = require("express");
 const passport = require("passport");
 const passportSetup = require("./passport")
 const authRoute = require("./routes/auth")
-const cors = require("cors")
+const cors = require("cors");
+const cookieParser = require('cookie-parser');
 const app = express();
 
 // https://google-auth-backend-sg7z.onrender.com
+
+app.use(cookieParser());
 
 app.use(
     cookieSession({
         name: "session",
         keys: ["sushi"],
-        maxAge: 24 * 60 * 60 * 100
+        maxAge: 24 * 60 * 60 * 100,
+        httpOnly: true
     })
 )
 
