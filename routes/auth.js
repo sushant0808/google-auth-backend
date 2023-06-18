@@ -27,16 +27,16 @@ router.get("/login-failed", (req, res) => {
     })
 })
 
-console.log("done")
+console.log("done", process.env.CLIENT_URL)
 
-router.get("/google", passport.authenticate("google", { scope: ["profile"] }))
-router.get("/google/callback", passport.authenticate("google", {
+router.get("/auth/google", passport.authenticate("google", { scope: ["profile"] }))
+router.get("/auth/google/callback", passport.authenticate("google", {
     successRedirect: process.env.CLIENT_URL,
     failureRedirect: "/login-failed"
 }))
 
-router.get("/github", passport.authenticate("github", { scope: ["profile"] }))
-router.get("/github/callback", passport.authenticate("github", {
+router.get("/auth/github", passport.authenticate("github", { scope: ["profile"] }))
+router.get("/auth/github/callback", passport.authenticate("github", {
     successRedirect: process.env.CLIENT_URL,
     failureRedirect: "/login-failed"
 }))

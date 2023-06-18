@@ -27,7 +27,7 @@ app.use(cors({
     credentials: true,
 }))
 
-app.use("/auth", authRoute);
+app.use("/", authRoute);
 
 app.listen(process.env.PORT || 5000, () => {
     console.log("Server is running");
