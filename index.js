@@ -14,6 +14,7 @@ app.use(cors({
     origin: process.env.CLIENT_URL,
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
+    allowedHeaders: "Content-Type, Authorization",
 }))
 
 app.use(cookieParser("mine"));
@@ -24,7 +25,9 @@ app.use(
         name: "session",
         keys: ["sushi"],
         maxAge: 24 * 60 * 60 * 100,
-        httpOnly: true
+        httpOnly: true,
+        resave: false,
+        saveUninitialized: false
     })
 )
 
