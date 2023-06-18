@@ -10,11 +10,17 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // https://google-auth-backend-sg7z.onrender.com
+app.use(cors({
+    origin: process.env.CLIENT_URL,
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+}))
 
-app.use(cookieParser());
+app.use(cookieParser("mine"));
 
 app.use(
     cookieSession({
+        secret: "mine",
         name: "session",
         keys: ["sushi"],
         maxAge: 24 * 60 * 60 * 100,
@@ -25,11 +31,6 @@ app.use(
 console.log('client url', process.env.CLIENT_URL);
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cors({
-    origin: process.env.CLIENT_URL,
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true,
-}))
 
 app.use("/", authRoute);
 
