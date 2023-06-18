@@ -18,6 +18,7 @@ app.use(
     })
 )
 
+console.log('process.env.CLIENT_URL', process.env.CLIENT_URL);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors({
