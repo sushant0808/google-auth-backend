@@ -2,6 +2,10 @@ const passport = require("passport");
 
 const router = require("express").Router();
 
+router.get("/", (req, res) => {
+    res.send("HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa")
+})
+
 router.get("/login-success", (req, res) => {
     console.log(req.cookies);
     console.log("req.user", req.user);
