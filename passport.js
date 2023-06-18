@@ -8,6 +8,7 @@ passport.use(new GoogleStrategy({
     callbackURL: "/auth/google/callback"
 },
     function (accessToken, refreshToken, profile, done) {
+        console.log("profile", profile)
         done(null, profile)
     }
 ));
@@ -23,9 +24,11 @@ passport.use(new GithubStrategy({
 ));
 
 passport.serializeUser((user, done) => {
+    console.log('serializeUser', user);
     done(null, user)
 })
 
 passport.deserializeUser((user, done) => {
+    console.log('deserializeUser', user);
     done(null, user);
 })

@@ -3,6 +3,7 @@ const passport = require("passport");
 const router = require("express").Router();
 
 router.get("/login-success", (req, res) => {
+    console.log("req.user", req.user);
     if (req.user) {
         res.json({
             success: true,
