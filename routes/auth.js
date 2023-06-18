@@ -2,7 +2,7 @@ const passport = require("passport");
 
 const router = require("express").Router();
 
-router.get("/", (req, res) => {
+router.get("/a", (req, res) => {
     res.send("HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaa")
 })
 
