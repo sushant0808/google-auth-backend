@@ -8,6 +8,8 @@ const authRoute = require("./routes/auth")
 const cors = require("cors")
 const app = express();
 
+// https://google-auth-backend-sg7z.onrender.com
+
 app.use(
     cookieSession({
         name: "session",
@@ -26,6 +28,6 @@ app.use(cors({
 
 app.use("/auth", authRoute);
 
-app.listen("5000", () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log("Server is running");
 })
